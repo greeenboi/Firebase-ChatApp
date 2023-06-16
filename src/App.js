@@ -44,7 +44,7 @@ function SignIn(){
     provider.setCustomParameters({
       prompt: "select_account"
     });
-    auth.signInWithPopup(provider);
+    
     auth.signInWithRedirect(provider);
   }
 

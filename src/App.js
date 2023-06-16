@@ -96,7 +96,7 @@ function ChatRoom(){
 
       </main>
       <form onSubmit={sendMessage}>
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
+        <input value={formValue} onChange={(e) => setFormValue(e.target.value) } placeholder="Type your message...."/>
         <button type="submit">🏹</button>
 
       </form>

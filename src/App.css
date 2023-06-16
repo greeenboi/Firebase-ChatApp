@@ -1,38 +1,196 @@
+:root{
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  
+	margin: 0;  
+  overflow-y: hidden !important;
+	background: linear-gradient(-45deg, #41D8DD, #5583EE, #8DEBFF, #6CACFF);
+	background-size: 400% 400%;
+	animation: gradient 20s ease-in-out infinite;
+	height: 100vh;
+  border-radius: 15px 15px 15px 15px;
+}
+
 .App {
+  text-align: center;
+  max-height:90vh;
+  max-width: 60vw;
+  margin: 0 auto;
+  
+}
+
+.App header {
+  background-color: #181717;
+  height: 10vh;
+  min-height: 50px;
+  border-radius: 15px 15px 0 0 !important;
+	border-bottom: 0 !important;
+  color: white;
+  position: fixed;
+  width: 100%;
+  max-width: 60vw;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.App section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  
+	border-radius: 15px !important;
+	background-color: rgba(0,0,0,0.4) !important;
+}
+
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+form {
+  height: 10vh;
+  position: absolute;
+  bottom: 0;  
+  width: 100%;
+  max-width: 60vw;
+  display: flex;
+  font-size: 1.5rem;
+  
+}
+
+form button {
+  border-radius: 10px 15px 15px 10px !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:10px !important;
+  border-color: rgba(5,5,5,0.1);
+	color: white !important;
+	cursor: pointer;
+}
+
+
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: rgba(0,0,0,0.3) !important;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+  border-radius: 15px 5px 5px 15px !important;	
+	cursor: pointer;
+}
+
+button {
+  background-color: #2b323e; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.sign-in {
+  color: #282c34;
+  background: white;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.text-login{
+  font-size: 30px;
+  font-display:inherit;
+}
+
+
+ul, li {
+  text-align: left;
+  list-style: none;
+}
+
+p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  
+  position: relative;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.message {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
   color: white;
+  border-radius: 25px 25px 0 25px;
+  background: #0b93f6;
+  align-self: flex-end;
+}
+.received p {
+  border-radius: 25px 25px 25px 0;
+  background: #e5e5ea;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
 }

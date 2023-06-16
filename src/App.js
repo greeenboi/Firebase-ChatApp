@@ -99,7 +99,7 @@ function ChatRoom(){
       </main>
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value) } placeholder="Type your message...."/>
-        <button type="submit">🏹</button>
+        <button type="submit"><i class="fas fa-location-arrow"></i></button>
 
       </form>
     </>

@@ -11,68 +11,166 @@ body {
 	background: linear-gradient(-45deg, #41D8DD, #5583EE, #8DEBFF, #6CACFF);
 	background-size: 400% 400%;
 	animation: gradient 20s ease-in-out infinite;
+  
 	height: 100vh;
   border-radius: 15px 15px 15px 15px;
 }
 
-.App {
-  text-align: center;
-  max-height:90vh;
-  max-width: 60vw;
-  margin: 0 auto;
+/*large screens*/
+
+@media only screen and (min-width: 700px) {
+  .App {
+    text-align: center;
+    max-height:90vh;
+    max-width: 60vw;
+    margin: 0 auto;
+    
+  }
+
+  .App header {
+    background-color: rgb(24, 23, 23);
+    height: 10vh;
+    min-height: 50px;
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 0 !important;
+    color: white;
+    position: fixed;
+    width: 100%;
+    max-width: 60vw;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .App section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+    
+    border-radius: 15px !important;
+    background-color: rgba(0,0,0,0.4) !important;
+  }
+  main {
+    padding: 10px;
+    height: 80vh;
+    margin: 10vh 0 10vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    line-height: 1.5;
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: rgba(0,0,0,0.3) !important;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    border-radius: 0 5px 5px 15px !important;	
+    cursor: pointer;
+  }
   
-}
-
-.App header {
-  background-color: #181717;
-  height: 10vh;
-  min-height: 50px;
-  border-radius: 15px 15px 0 0 !important;
-	border-bottom: 0 !important;
-  color: white;
-  position: fixed;
-  width: 100%;
-  max-width: 60vw;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 99;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.App section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 90vh;
+  button {
+    background-color: #343b48; /* Green */
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.25rem;
+  }
+  form {
+    height: 10vh;
+    position: absolute;
+    bottom: 0;  
+    width: 100%;
+    max-width: 60vw;
+    display: flex;
+    font-size: 1.5rem;
+    
+  }
   
-	border-radius: 15px !important;
-	background-color: rgba(0,0,0,0.4) !important;
+  form button {
+    border-radius: 10px 15px 15px 10px !important;
+    background-color: rgba(0,0,0,0.3) !important;
+    border:10px !important;
+    border-color: rgba(5,5,5,0.1);
+    color: white !important;
+    cursor: pointer;
+  }
 }
 
-main {
-  padding: 10px;
-  height: 80vh;
-  margin: 10vh 0 10vh;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-}
+/*small screens*/
 
-main::-webkit-scrollbar {
-  width: 0.25rem;
-}
+@media only screen and (max-width: 700){
+  .App {
+    text-align: center;
+    max-height:100vh;
+    max-width: 90vw;
+    margin: 0 auto;
+    
+  }
+  
+  .App header {
+    background-color: #181717;
+    height: 5vh;
+    
+    
+    color: white;
+    position: fixed;
+    width: 90%;
+    
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding-bottom: 5px;
+    box-sizing: border-box;
+  }
+  
+  .App section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+    
+    border-radius: 15px !important;
+    background-color: rgba(0,0,0,0.4) !important;
+  }
+  main {
+    padding: 5px;
+    height: 80vh;
+    
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  button {
+    background-color: #2b323e; /* Green */
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    position:static;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;    
+    font-size: 1rem;
+  }
 
-main::-webkit-scrollbar-track {
-  background: #1e1e24;
 }
-
-main::-webkit-scrollbar-thumb {
-  background: #6649b8;
-}
-
 form {
   height: 10vh;
   position: absolute;
@@ -94,30 +192,26 @@ form button {
 }
 
 
-input {
-  line-height: 1.5;
-  width: 100%;
-  font-size: 1.5rem;
-  background-color: rgba(0,0,0,0.3) !important;
-  color: white;
-  outline: none;
-  border: none;
-  padding: 0 10px;
-  border-radius: 15px 5px 5px 15px !important;	
-	cursor: pointer;
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
 }
 
-button {
-  background-color: #2b323e; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 1.25rem;
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
 }
+
+main::-webkit-scrollbar-thumb {
+  background: rgb(102, 73, 184);
+}
+
+main::-webkit-scrollbar-thumb:hover{
+  background: rgba(102, 73, 184,0.5);
+}
+
+
+
+
 
 @keyframes gradient {
 	0% {
@@ -155,40 +249,62 @@ ul, li {
   list-style: none;
 }
 
-p {
-  max-width: 500px;
-  margin-bottom: 12px;
-  line-height: 24px;
-  padding: 10px 20px;
-  
-  position: relative;
-  color: white;
-  text-align: center;
-}
+
 
 .message {
   display: flex;
   align-items: center;
 }
 
-
-.sent {
-  flex-direction: row-reverse;
+.sent{
+  flex-direction: row-reverse ;
 }
 
 .sent p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  position: relative;
   color: white;
+  text-align: center;
+  
+  
   border-radius: 25px 25px 0 25px;
-  background: #0b93f6;
+  background:linear-gradient(120deg, #248A52, #257287);
   align-self: flex-end;
 }
-.received p {
+ p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  position: relative;
+  color: white;
+  text-align: center;
   border-radius: 25px 25px 25px 0;
-  background: #313145;
-  color: black;
+  background: rgba(0, 0, 0, .3);
+  
 }
 
-img {
+.exit{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  padding: 5%;  
+}
+
+.logo{
+  width: 60px;
+  height: 60px;
+  padding: 2px;
+  border: 2px ;
+  background-color: rgb(28, 27, 27);
+  border-radius: 20px 20px 20px 20px;
+  cursor:crosshair;
+}
+
+.image {
   width: 40px;
   height: 40px;
   border-radius: 50%;

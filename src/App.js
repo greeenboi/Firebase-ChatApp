@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
+import icon from './icon.svg'
 
 
 import firebase from 'firebase/compat/app';
@@ -27,7 +28,8 @@ function App() {
   return (
     <div className="App">
       <header align="center">        
-       <p align="center">{user ? <SignOut /> : <SignIn />}</p> 
+       {user ? <SignOut /> : <SignIn />}
+       <img className='logo' src={icon} alt="logo"/>
       </header>
       <section>
         {user ? <ChatRoom /> : <div className='text-login'>Please Login</div>}
@@ -55,7 +57,7 @@ function SignIn(){
 
 function SignOut(){
   return auth.currentUser &&(
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button onClick={() => auth.signOut()}><img className="exit" src="https://img.icons8.com/ios/100/exit--v1.png" alt="logout"/></button>
 
   )
 }
@@ -112,8 +114,8 @@ function ChatMessage(props){
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'recieved'; 
   return( 
   <div className={`message ${messageClass}`}>
-    <img src={photoURL || 'https://img.icons8.com/nolan/96/user.png'} alt="profile-pic"/>
-    <p>{text}</p>   
+    <img className='image' src={photoURL || 'https://img.icons8.com/nolan/96/user.png'} alt="profile-pic"/>
+    <p >{text}</p>   
   </div>
   )
 }

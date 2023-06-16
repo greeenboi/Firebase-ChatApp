@@ -41,7 +41,11 @@ function App() {
 function SignIn(){
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({
+      prompt: "select_account"
+    });
     auth.signInWithPopup(provider);
+    auth.signInWithRedirect(provider);
   }
 
   return (
